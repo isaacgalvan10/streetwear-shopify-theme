@@ -1,0 +1,294 @@
+<style>
+    footer {
+      background: {{ section.settings.color_footer_bg}};
+}
+
+  footer .footer-menu a {
+    color: {{ section.settings.color_footer_links}};
+}
+
+  footer .menu-title,
+  footer .social-title {
+    color: {{ section.settings.color_footer_title}};
+}
+
+  footer .address {
+    color: {{ section.settings.color_footer_text}};
+}
+</style>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          {% for block in section.blocks %}
+          {% assign footer_linklist = block.settings.menu %}
+          <div class="col-md-4">
+            <div class="footer-menu footer-fade-in">
+              <span class="menu-title">{{ block.settings.title }}</span>
+              <ul>
+              {% for link in linklists[footer_linklist].links %}
+                      <li class="site-footer__linklist-item">
+                        <a href="{{ link.url }}"
+                          {% if link.current %} aria-current="page"{% endif %}
+                        >
+                          {{ link.title | escape }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="social-title footer-fade-in">Follow Us</div>
+        <ul class="social-icons footer-fade-in">
+          <li>
+            <a href="#">
+              <i aria-hidden="true" class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i aria-hidden="true" class="fa fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i aria-hidden="true" class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i aria-hidden="true" class="fa fa-youtube-play"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i aria-hidden="true" class="fa fa-pinterest"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <hr />
+        <span class="address footer-fade-in"
+          >1234 Main St. San Antonio, TX 78258</span
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %} 
+{
+  "name": {
+    "da": "Sidefod",
+    "de": "Fußzeile",
+    "en": "Footer",
+    "es": "Pie de página",
+    "fi": "Alatunniste",
+    "fr": "Pied de page",
+    "hi": "फुटर",
+    "it": "Footer",
+    "ja": "フッター",
+    "ko": "바닥글",
+    "nb": "Footer",
+    "nl": "Voettekst",
+    "pt-BR": "Rodapé",
+    "pt-PT": "Rodapé",
+    "sv": "Sidfot",
+    "th": "ส่วนท้าย",
+    "zh-CN": "页脚",
+    "zh-TW": "頁尾"
+  },
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "header",
+      "content": {
+        "da": "Farve",
+        "de": "Farbe",
+        "en": "Color",
+        "es": "Color",
+        "fi": "Väri",
+        "fr": "Couleur",
+        "hi": "रंग",
+        "it": "Colore",
+        "ja": "色",
+        "ko": "색상",
+        "nb": "Farge",
+        "nl": "Kleur",
+        "pt-BR": "Cor",
+        "pt-PT": "Cor",
+        "sv": "Färg",
+        "th": "สี",
+        "zh-CN": "颜色",
+        "zh-TW": "顏色"
+      }
+    },
+    {
+      "type": "color",
+      "id": "color_footer_bg",
+      "label": {
+        "da": "Baggrund",
+        "de": "Hintergrund",
+        "en": "Background",
+        "es": "Fondo",
+        "fi": "Tausta",
+        "fr": "Couleurde fond", 
+        "hi": "पृष्ठभूमि", 
+        "it": "Sfondo", 
+        "ja": "背景", 
+        "ko": "배경", 
+        "nb":"Bakgrunn",
+        "nl": "Achtergrond",
+        "pt-BR": "Plano de fundo",
+        "pt-PT": "Fundo",
+        "sv": "Bakgrund",
+        "th": "พื้นหลัง",
+        "zh-CN": "背景",
+        "zh-TW": "背景"
+      },
+      "default": "#1b1b1b"
+    },
+    {
+      "type": "color",
+      "id": "color_footer_title",
+      "label": "Footer Menu Titles",
+      "default": "#ffff09"
+    },
+    {
+      "type": "color",
+      "id": "color_footer_links",
+      "label": "Footer Menu Links",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_footer_text",
+      "label": {
+        "da": "Tekst",
+        "de": "Text",
+        "en": "Text",
+        "es": "Texto",
+        "fi": "Teksti",
+        "fr": "Texte",
+        "hi": "टेक्स्ट",
+        "it": "Testo",
+        "ja": "テキスト",
+        "ko": "텍스트",
+        "nb": "Tekst",
+        "nl": "Tekst",
+        "pt-BR": "Texto",
+        "pt-PT": "Texto",
+        "sv": "Text",
+        "th": "ข้อความ",
+        "zh-CN": "文本",
+        "zh-TW": "文字"
+      },
+      "default": "#797979"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": {
+        "da": "Menu",
+        "de": "Menü",
+        "en": "Menu",
+        "es": "Menú",
+        "fi": "Valikko",
+        "fr": "Menu",
+        "hi": "मेनू",
+        "it": "Menu",
+        "ja": "メニュー",
+        "ko": "메뉴",
+        "nb": "Meny",
+        "nl": "Menu",
+        "pt-BR": "Menu",
+        "pt-PT": "Menu",
+        "sv": "Meny",
+        "th": "เมนู",
+        "zh-CN": "菜单",
+        "zh-TW": "選單"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "da": "Overskrift",
+            "de": "Überschrift",
+            "en": "Heading",
+            "es": "Título",
+            "fi": "Otsake",
+            "fr": "Titre",
+            "hi": "शीर्षक",
+            "it": "Heading",
+            "ja": "見出し",
+            "ko": "제목",
+            "nb": "Overskrift",
+            "nl": "Kop",
+            "pt-BR": "Título",
+            "pt-PT": "Título",
+            "sv": "Rubrik",
+            "th": "ส่วนหัว",
+            "zh-CN": "标题",
+            "zh-TW": "標題"
+          },
+          "default": {
+            "da": "Hurtigelinks", 
+            "de": "Quick-Links", 
+            "en": "Quick links", 
+            "es": "Enlaces rápidos", 
+            "fi":"Pikalinkit",
+            "fr": "Liens rapides",
+            "hi": "त्वरित लिंक",
+            "it": "Link rapidi",
+            "ja": "クイックリンク",
+            "ko": "빠른 링크",
+            "nb": "Hurtigkoblinger",
+            "nl": "Snelle links",
+            "pt-BR": "Links rápidos",
+            "pt-PT": "Ligações rápidas",
+            "sv": "Snabblänkar",
+            "th": "ลิงก์ด่วน",
+            "zh-CN": "快速链接",
+            "zh-TW": "快速連結"
+          }
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": {
+            "da": "Menu",
+            "de": "Menü",
+            "en": "Menu",
+            "es": "Menú",
+            "fi": "Valikko",
+            "fr": "Menu",
+            "hi": "मेनू",
+            "it": "Menu",
+            "ja": "メニュー",
+            "ko": "메뉴",
+            "nb": "Meny",
+            "nl": "Menu",
+            "pt-BR": "Menu",
+            "pt-PT": "Menu",
+            "sv": "Meny",
+            "th": "เมนู",
+            "zh-CN": "菜单",
+            "zh-TW": "選單"
+          },
+          "default": "footer"
+        }
+      ]
+    }
+  ]
+} 
+{% endschema %}

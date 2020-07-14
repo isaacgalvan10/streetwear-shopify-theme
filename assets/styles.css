@@ -1,0 +1,632 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,700;1,200&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Avenir Next Condesed", "Source Sans Pro", sans-serif;
+  overflow-x: hidden;
+  background: #f4f7fd;
+  width: 100vw;
+}
+
+header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 0 10%;
+  z-index: 10;
+}
+
+header .logo a {
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+}
+
+header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+}
+
+header .menu a {
+  display: inline-block;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+header .menu .link {
+  padding: 20px;
+}
+
+header .menu .link .site-header__cart {
+  padding: 0;
+}
+
+header .menu .link .site-header__cart-count {
+  right: -4px;
+  top: -3px;
+}
+
+header .menu .dropdown {
+  position: relative;
+}
+
+header .menu .dropdown .sub-menu {
+  position: absolute;
+  -webkit-transform: translate3d(0, 10px, 0);
+          transform: translate3d(0, 10px, 0);
+  background: white;
+  color: red;
+  display: none;
+  min-width: 150px;
+  border-radius: 5px;
+}
+
+header .menu .dropdown .sub-menu a {
+  color: black;
+  display: block;
+  padding: 10px;
+}
+
+header .menu .dropdown:hover .sub-menu,
+header .menu .dropdown .sub-menu:hover {
+  display: block;
+}
+
+header .mobile-menu .link {
+  display: none;
+}
+
+header .menu .open-mobile-menu {
+  display: none;
+}
+
+header .mobile-menu .open-mobile-menu {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+#jumbo {
+  background: black;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+#jumbo .bg-image {
+  background: url("/assets/jumbobg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+#jumbo .transparent-color {
+  background: rgba(66, 53, 88, 0.8);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+#jumbo .titles {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#jumbo .titles h1 {
+  font-size: 7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+}
+
+#jumbo .titles h2 {
+  color: yellow;
+  font-size: 5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  -webkit-transform: translateX(135px);
+          transform: translateX(135px);
+}
+
+#jumbo .state {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  position: absolute;
+  height: 12%;
+  width: 100%;
+  bottom: 0;
+  z-index: 3;
+}
+
+#jumbo .state .number {
+  font-size: 5rem;
+  -webkit-transform: translateX(60%);
+          transform: translateX(60%);
+}
+
+#jumbo .store-info {
+  position: absolute;
+  height: 20%;
+  width: 75%;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#jumbo .store-info img {
+  height: 100%;
+  width: 25%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#jumbo .store-info img:hover {
+  -webkit-filter: saturate(100%);
+          filter: saturate(100%);
+}
+
+#two-collections {
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+#two-collections .left-c .left-c-bg {
+  background: rgba(255, 255, 0, 0.5);
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#two-collections .left-c .left-c-bg .left-c-img {
+  height: 400px;
+  width: 400px;
+}
+
+#two-collections .left-c .left-c-bg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#two-collections .left-c .collection-title {
+  font-size: 3.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 10px;
+  left: -10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#two-collections .right-c-bg {
+  background: #ccced3;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#two-collections .right-c-bg .right-c-img {
+  height: 400px;
+  width: 400px;
+}
+
+#two-collections .right-c-bg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#two-collections .right-c-bg .collection-title {
+  color: white;
+  position: absolute;
+  bottom: 180px;
+  left: 70px;
+  font-size: 3.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+#horizontal-img .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#horizontal-img .overlay .percent-number {
+  color: white;
+  font-size: 20rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+#horizontal-img .overlay .title {
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+#horizontal-img .overlay a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  height: 70px;
+  padding: 15px 60px;
+  border: 2px solid white;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#horizontal-img .overlay a:hover {
+  background: #ccced3;
+}
+
+#products-group {
+  padding: 50px 0 0 0;
+  overflow: hidden;
+}
+
+#products-group div[class*="col"] {
+  margin-bottom: 50px;
+}
+
+#products-group h2 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+#products-group .product-item {
+  color: black;
+  height: 100%;
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#products-group .product-item .product-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#products-group .product-item .product-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#products-group .product-item .overlay {
+  background: rgba(100, 100, 100, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
+
+#products-group .product-item .overlay:hover {
+  opacity: 1;
+}
+
+#products-group .product-img {
+  width: 80%;
+}
+
+footer {
+  background: #1b1b1b;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+footer .footer-menu a {
+  color: white;
+}
+
+footer .menu-title,
+footer .social-title {
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+footer .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .social-icons li {
+  margin-right: 15px;
+}
+
+footer .social-icons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .social-icons a:hover {
+  color: yellow;
+  background: black;
+}
+
+footer .address {
+  display: block;
+  width: 100%;
+  color: grey;
+  text-align: center;
+}
+
+#mobile-menu {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 20px;
+  display: none;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+#mobile-menu .logo {
+  font-size: 1.7rem;
+  text-align: center;
+  position: relative;
+}
+
+#mobile-menu .logo a {
+  color: white;
+  text-transform: uppercase;
+}
+
+#mobile-menu .menu li {
+  margin-bottom: 1rem;
+}
+
+#mobile-menu .menu > li > a {
+  color: yellow;
+  font-size: 1.2rem;
+  display: block;
+  border-bottom: 1px solid white;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+#mobile-menu .menu .sub-menu a {
+  color: white;
+  font-size: 1.2rem;
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 7px;
+}
+
+#mobile-menu .close-mobile-menu {
+  height: 50px;
+  width: 50px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 40px;
+  top: -5px;
+  cursor: pointer;
+}
+
+#mobile-menu.active {
+  display: block;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #horizontal-img .overlay .percent-number {
+    font-size: 15rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  #jumbo .titles h1 {
+    font-size: 4rem;
+  }
+  #jumbo .titles h2 {
+    font-size: 3rem;
+  }
+  #horizontal-img .overlay .percent-number {
+    font-size: 12rem;
+  }
+  #horizontal-img .overlay .title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 575px) {
+  header .logo a {
+    font-size: 1.5rem;
+  }
+  #mobile-menu .close-mobile-menu {
+    right: 0;
+  }
+  #jumbo .state .number {
+    font-size: 3rem;
+  }
+  #jumbo .titles {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  #jumbo .titles h1 {
+    font-size: 3rem;
+  }
+  #jumbo .titles h2 {
+    font-size: 1.8rem;
+  }
+  #horizontal-img .overlay .percent-number {
+    font-size: 10rem;
+  }
+  #horizontal-img .overlay .title {
+    font-size: 3rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
