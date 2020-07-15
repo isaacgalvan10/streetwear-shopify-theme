@@ -25,14 +25,12 @@
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "social_twitter_link": "",
-    "social_facebook_link": "",
-    "social_pinterest_link": "",
-    "social_instagram_link": "",
-    "social_tumblr_link": "",
-    "social_snapchat_link": "",
-    "social_youtube_link": "",
-    "social_vimeo_link": "",
+    "social_twitter_link": "https://www.twitter.com",
+    "social_facebook_link": "https://www.facebook.com",
+    "social_pinterest_link": "https://www.pinterest.com",
+    "social_instagram_link": "https://www.instagram.com",
+    "social_youtube_link": "https://www.youtube.com",
+    "social_vimeo_link": "https://www.vimeo.com",
     "favicon": "",
     "enable_ajax": true,
     "checkout_header_image": "",
@@ -64,6 +62,38 @@
           "color_bg": "#3a3a3a",
           "color_text": "#ffffff"
         }
+      },
+      "jumbo": {
+        "type": "jumbo",
+        "settings": {},
+        "blocks": {
+          "jumbo-0": {
+            "type": "image",
+            "settings": {}
+          },
+          "jumbo-1": {
+            "type": "image",
+            "settings": {}
+          },
+          "jumbo-2": {
+            "type": "image",
+            "settings": {}
+          },
+          "jumbo-3": {
+            "type": "image",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "jumbo-0",
+          "jumbo-1",
+          "jumbo-2",
+          "jumbo-3"
+        ]
+      },
+      "two-collections": {
+        "type": "two-collections",
+        "settings": {}
       },
       "hero-1": {
         "type": "hero",
@@ -187,12 +217,6 @@
               "title": "Quick links",
               "menu": "footer"
             }
-          },
-          "footer-1": {
-            "type": "newsletter",
-            "settings": {
-              "title": "Newsletter"
-            }
           }
         },
         "block_order": [
@@ -200,14 +224,6 @@
           "footer-1"
         ],
         "settings": {}
-      },
-      "1593969794734": {
-        "type": "newsletter",
-        "settings": {
-          "section_title": "Subscribe to our newsletter",
-          "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
-          "show_background": true
-        }
       },
       "cart-template": {
         "type": "cart-template",
@@ -239,17 +255,51 @@
       }
     },
     "content_for_index": [
-      "hero-1",
-      "1593969794734",
-      "collection",
-      "hero-2",
-      "quotes",
-      "image-bar"
+      "jumbo",
+      "two-collections"
     ]
   },
   "presets": {
     "Default": {
+      "social_twitter_link": "https://www.twitter.com",
+      "social_facebook_link": "https://www.facebook.com",
+      "social_pinterest_link": "https://www.pinterest.com",
+      "social_instagram_link": "https://www.instagram.com",
+      "social_youtube_link": "https://www.youtube.com",
+      "social_vimeo_link": "https://www.vimeo.com",
       "sections": {
+        "Jumbo": {
+          "type": "jumbo",
+          "settings": {},
+          "blocks": {
+            "jumbo-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "jumbo-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "jumbo-2": {
+              "type": "image",
+              "settings": {}
+            },
+            "jumbo-3": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "jumbo-0",
+            "jumbo-1",
+            "jumbo-2",
+            "jumbo-3"
+          ]
+        },
+        "Two Collections": {
+          "type": "two-collections",
+          "settings": {}
+        },
         "header": {
           "type": "header",
           "settings": {}
@@ -356,10 +406,6 @@
             "footer-0": {
               "type": "link_list",
               "settings": {}
-            },
-            "footer-1": {
-              "type": "newsletter",
-              "settings": {}
             }
           },
           "block_order": [
@@ -372,13 +418,8 @@
         }
       },
       "content_for_index": [
-        "hero-1",
-        "feature-row",
-        "feature-columns",
-        "collection",
-        "hero-2",
-        "quotes",
-        "image-bar"
+        "jumbo",
+        "two-collections"
       ]
     },
     "Light": {
@@ -403,14 +444,12 @@
       "share_facebook": true,
       "share_twitter": true,
       "share_pinterest": true,
-      "social_twitter_link": "",
-      "social_facebook_link": "",
-      "social_pinterest_link": "",
-      "social_instagram_link": "",
-      "social_tumblr_link": "",
-      "social_snapchat_link": "",
-      "social_youtube_link": "",
-      "social_vimeo_link": "",
+      "social_twitter_link": "https://www.twitter.com",
+      "social_facebook_link": "https://www.facebook.com",
+      "social_pinterest_link": "https://www.pinterest.com",
+      "social_instagram_link": "https://www.instagram.com",
+      "social_youtube_link": "https://www.youtube.com",
+      "social_vimeo_link": "https://www.vimeo.com",
       "favicon": "",
       "checkout_header_image": "",
       "checkout_logo_image": "",
@@ -427,6 +466,38 @@
       "checkout_button_color": "#23314e",
       "checkout_error_color": "#ff6d6d",
       "sections": {
+        "Jumbo": {
+          "type": "jumbo",
+          "settings": {},
+          "blocks": {
+            "jumbo-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "jumbo-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "jumbo-2": {
+              "type": "image",
+              "settings": {}
+            },
+            "jumbo-3": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "jumbo-0",
+            "jumbo-1",
+            "jumbo-2",
+            "jumbo-3"
+          ]
+        },
+        "Two Collections": {
+          "type": "two-collections",
+          "settings": {}
+        },
         "header": {
           "type": "header",
           "settings": {
@@ -598,20 +669,10 @@
             "link_list": {
               "type": "link_list",
               "settings": {}
-            },
-            "text": {
-              "type": "text",
-              "settings": {}
-            },
-            "newsletter": {
-              "type": "newsletter",
-              "settings": {}
             }
           },
           "block_order": [
-            "link_list",
-            "text",
-            "newsletter"
+            "link_list"
           ],
           "settings": {
             "color_footer_bg": "#f8f8f8",
@@ -620,13 +681,8 @@
         }
       },
       "content_for_index": [
-        "hero",
-        "featured-collections",
-        "slideshow",
-        "1492033924902",
-        "1492096252560",
-        "1492033877875",
-        "1492033809691"
+        "jumbo",
+        "two-collections"
       ]
     }
   }

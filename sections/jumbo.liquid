@@ -1,0 +1,107 @@
+<section id="jumbo">
+  {% if section.settings.bg_img != blank %}
+    <div class="bg-image" style="background: url('{{ section.settings.bg_image | img_url: '900x' }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </div>
+    {%else%}
+        <div class="bg-image" style="background: url('{{ 'jumbobg.jpg' | asset_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </div>
+  {%endif%}
+  <div class="transparent-color"></div>
+  <div class="titles">
+    <h1>{{ section.settings.jumbo_title }}</h1>
+    <h2>{{ section.settings.jumbo_subtitle }}</h2>
+  </div>
+  <div class="state">
+    <span class="number">01</span>
+  </div>
+  <div class="store-info">
+  {% for block in section.blocks %}
+    {% if block.settings.bottom_img != blank %}
+    <a href="{{block.settings.bottom_img_destination}}">
+      <img src="{{block.settings.bottom_img | img_url: '400x'}}" />
+    </a>  
+    {% else %}
+    <a href="#">
+      <img src="{{ 'store.jpg' | asset_url }}" />
+    </a>  
+    {% endif %}
+  {% endfor %}
+  </div>
+</section>
+
+{% schema %} 
+{
+  "name": "jumbo",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "jumbo_title",
+      "label": "Jumbo Title",
+      "default": "StreetWear"
+    },
+    {
+      "type": "text",
+      "id": "jumbo_subtitle",
+      "label": "Jumbo Sub-title",
+      "default": "New Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Bottom Images",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bottom_img",
+          "label": "Image"
+        },
+        {
+          "id": "bottom_img_destination",
+          "type": "url",
+          "label": "Image Destination"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"jumbo",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "bottom_img_destination": "#"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "bottom_img_destination": "#"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "bottom_img_destination": "#"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "bottom_img_destination": "#"
+          }
+        }
+      ]
+    }
+  ]
+
+}
+{% endschema %}

@@ -1,0 +1,76 @@
+{%- assign collection1 = collections[section.settings.collection1] -%}
+{%- assign collection2 = collections[section.settings.collection2] -%}
+<section id="two-collections">
+      <div class="row">
+        <div class="col-md-6 left-c">
+          <div class="left-c-bg" style="background: {{section.settings.left_c_color}};">
+            <div class="left-c-img">
+              <a href="{{collection1.url}}">
+                <img src="{{ collection1.image | img_url: '400x' }}" />
+            </div>
+            <span class="collection-title" style="color: {{section.settings.left_title_color}}">{{collection1.title}}</span>
+              </a>
+        </div>
+        </div>
+        <div class="col-md-6 right-c">
+          <div class="right-c-bg" style="background: {{section.settings.right_c_color}};">
+            <div class="right-c-img">
+              <a href="{{collection2.url}}">
+                <img src="{{ collection2.image | img_url: '400x' }}" />
+            </div>
+              <span class="collection-title" style="color: {{section.settings.right_title_color}}">{{collection2.title}}</span>
+              </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% schema %} 
+{
+  "name": "Two Collections",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection1",
+      "label": "Collection 1",
+      "info": "Choose a collection"
+    },
+    {
+      "type": "color",
+      "id": "left_title_color",
+      "label": "Left Text Color",
+      "default": "#3a3a3a"
+    },
+    {
+      "type": "color",
+      "id": "left_c_color",
+      "label": "Left Background Color",
+      "default": "rgba(255, 255, 000, 0.5)"
+    },
+    {
+      "type": "collection",
+      "id": "collection2",
+      "label": "Collection 2",
+      "info": "Choose a collection"
+    },
+    {
+      "type": "color",
+      "id": "right_title_color",
+      "label": "Right Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "right_c_color",
+      "label": "Right Background Color",
+      "default": "#ccced3"
+    }
+  ],
+  "presets": [
+    {
+      "name":"Two Collections",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

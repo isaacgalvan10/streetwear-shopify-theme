@@ -8,10 +8,16 @@ $font-subheader-color: rgb(255, 255, 000);
 
 html,
 body {
-  font-family: "Avenir Next Condesed", "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   background: #f4f7fd;
   width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
 }
 
 header {
@@ -179,10 +185,16 @@ header {
     right: 0;
     z-index: 3;
     display: flex;
+    overflow: hidden;
+
+    a {
+      width: 25%;
+      display: inline-block;
+    }
 
     img {
       height: 100%;
-      width: 25%;
+      width: 100%;
       object-fit: cover;
       cursor: pointer;
       filter: saturate(0);
@@ -221,13 +233,8 @@ header {
       font-weight: 900;
       text-transform: uppercase;
       position: absolute;
-      bottom: 10px;
-      left: -10%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      height: 100%;
-      width: 100%;
+      bottom: 300px;
+      left: 350px;
     }
   }
 
@@ -250,13 +257,13 @@ header {
     }
 
     .collection-title {
-      color: white;
-      position: absolute;
-      bottom: 180px;
-      left: 70px;
       font-size: 3.3rem;
       font-weight: 900;
       text-transform: uppercase;
+      position: absolute;
+      color: white;
+      bottom: 180px;
+      left: 70px;
     }
   }
 }

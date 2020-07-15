@@ -6,10 +6,16 @@
 
 html,
 body {
-  font-family: "Avenir Next Condesed", "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   background: #f4f7fd;
   width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
 }
 
 header {
@@ -212,11 +218,17 @@ header .mobile-menu .open-mobile-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
+}
+
+#jumbo .store-info a {
+  width: 25%;
+  display: inline-block;
 }
 
 #jumbo .store-info img {
   height: 100%;
-  width: 25%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
@@ -267,19 +279,8 @@ header .mobile-menu .open-mobile-menu {
   font-weight: 900;
   text-transform: uppercase;
   position: absolute;
-  bottom: 10px;
-  left: -10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  width: 100%;
+  bottom: 300px;
+  left: 350px;
 }
 
 #two-collections .right-c-bg {
@@ -309,13 +310,13 @@ header .mobile-menu .open-mobile-menu {
 }
 
 #two-collections .right-c-bg .collection-title {
-  color: white;
-  position: absolute;
-  bottom: 180px;
-  left: 70px;
   font-size: 3.3rem;
   font-weight: 900;
   text-transform: uppercase;
+  position: absolute;
+  color: white;
+  bottom: 180px;
+  left: 70px;
 }
 
 #horizontal-img .overlay {
