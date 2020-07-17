@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,700;1,200&display=swap");
 
-$font-subheader-color: rgb(255, 255, 000);
+{% assign header_font = settings.type_header_font %}
+{% assign base_font = settings.type_base_font %}
+
+{{ header_font | font_face }}
+{{ base_font | font_face }}
 
 * {
   box-sizing: border-box;
@@ -8,16 +12,25 @@ $font-subheader-color: rgb(255, 255, 000);
 
 html,
 body {
-  font-family: "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: {{base_font.family}}, "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   background: #f4f7fd;
   width: 100vw;
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
-  font-family: "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+h1, h2, h3, h4, h5, h6, {
+  font-family: {{header_font.family}}, "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
   margin: 0;
   line-height: 1;
+}
+
+h2 {
+  color: {{settings.color_text}};
+}
+
+p, span {
+  color: {{settings.color_body_text}};
+  font-family: {{base_font.family}}, "Avenir Next Condesed", "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -147,7 +160,7 @@ header {
   .titles {
     position: absolute;
     z-index: 3;
-    color: white;
+    color: {{settings.title_color}};
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -160,7 +173,7 @@ header {
     }
 
     h2 {
-      color: $font-subheader-color;
+      color: {{settings.subtitle_color}};
       font-size: 5rem;
       font-weight: 200;
       text-transform: uppercase;
@@ -312,7 +325,7 @@ header {
       transition: all 0.4s ease-in-out;
 
       &:hover {
-        background: #ccced3;
+        background: {{settings.button_hover_color}};
       }
     }
   }
@@ -418,7 +431,7 @@ footer {
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        color: rgb(255, 255, 000);
+        color: {{settings.social_hover_color}};
         background: black;
       }
     }
