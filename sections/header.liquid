@@ -60,7 +60,7 @@
     {% if request.page_type == 'index' %}
         <h1 class="h2 site-header__logo">
       {% else %}
-        <div class="h2 site-header__logo">
+        <div class="h2 site-header__logo" style="position: relative; top: 40px;">
     {% endif %}
     {% if section.settings.logo %}
       {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
@@ -86,8 +86,7 @@
         <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
     {% endif %}
   </div>
-  <ul class="menu">
-
+  <ul class="menu" style="position: relative; bottom: 35px; left: 100%;">
 
     <!-- Start menu loop -->
 

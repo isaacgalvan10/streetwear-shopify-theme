@@ -1,3 +1,4 @@
+<div class="content-wrapper">
 <div class="section-header text-center">
   <h1 class="article__title" id="title-0">{{ article.title }}</h1>
   {% if section.settings.blog_show_author %}
@@ -18,7 +19,7 @@
 {% if section.settings.show_share_buttons %}
   {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
 {% endif %}
-
+</div>
 
 
 {% schema %}

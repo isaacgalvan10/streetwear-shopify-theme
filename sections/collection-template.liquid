@@ -18,7 +18,7 @@
 {% paginate collection.products by limit %}
 
 <div data-section-id="{{ section.id }}" data-section-type="collection-template">
-  <header class="collection-header">
+  <div class="collection-header">
     {%- assign is_filter_by_available = false -%}
     {%- if section.settings.tags_enable and collection.all_tags.size > 0 -%}
       {%- assign is_filter_by_available = true -%}
@@ -120,7 +120,7 @@
         </div>
       </div>
     {% endif %}
-  </header>
+  </div>
 
   <div class="page-width" id="Collection">
     {% if section.settings.layout == 'grid' %}

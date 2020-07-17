@@ -1,151 +1,5 @@
-// JUMBO ANIMATION //
-let jumboTl = gsap.timeline();
-jumboTl
-  .fromTo(
-    "#jumbo .transparent-color",
-    {
-      opacity: 1,
-      backgroundColor: "rgb(66, 53, 88)",
-    },
-    {
-      opacity: 0.8,
-      duration: 1.2,
-    }
-  )
-  .fromTo(
-    "header .logo",
-    {
-      x: -200,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-    },
-    ">-.5"
-  )
-  .fromTo(
-    "header .menu",
-    {
-      x: 200,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-    },
-    ">-1"
-  )
-  .fromTo(
-    "#jumbo .titles h1",
-    {
-      x: 0,
-      opacity: 0,
-    },
-    {
-      x: 100,
-      opacity: 1,
-      duration: 1,
-    },
-    ">-.3"
-  )
-  .fromTo(
-    "#jumbo .titles h2",
-    {
-      x: 0,
-      opacity: 0,
-    },
-    {
-      x: 135,
-      opacity: 1,
-      duration: 1,
-    },
-    ">-.5"
-  )
-  .fromTo(
-    "#jumbo .state",
-    {
-      x: "100%",
-    },
-    {
-      x: 0,
-      duration: 1,
-    },
-    ">-1"
-  )
-  .fromTo(
-    "#jumbo .store-info",
-    {
-      y: "100%",
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-    },
-    ">-1.8"
-  )
-  .fromTo(
-    "#jumbo .store-info img",
-    {
-      y: 400,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      stagger: 0.2,
-    },
-    ">-1.5"
-  );
-
-// TWO COLLECTION SECTION ANIMATION //
-
-const twoCollectionTl = gsap.timeline();
-twoCollectionTl
-  .fromTo(
-    "#two-collections .col-md-6",
-    {
-      y: 300,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-    }
-  )
-  .fromTo(
-    "#two-collections .collection-title",
-    {
-      y: 300,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-    }
-  );
-
-// TWO COLLECTION SCROLL ANIMATION //
-
 let homeController = new ScrollMagic.Controller();
-
-let twoCScene = new ScrollMagic.Scene({
-  triggerElement: "#two-collections",
-  triggerHook: 1,
-  reverse: false,
-  offset: 200,
-  duration: 0,
-})
-  .setTween(twoCollectionTl)
-  // .addIndicators()
-  .addTo(homeController);
+let homeActive = document.querySelector(".template-index");
 
 // HEADER ANIMATION //
 
@@ -174,88 +28,258 @@ headerTl
   );
 
 let headerScene = new ScrollMagic.Scene({
-  triggerElement: "#jumbo",
-  triggerHook: 1,
+  triggerElement: "body",
+  triggerHook: 0,
   reverse: true,
-  offset: document.querySelector("#jumbo").offsetHeight + 100,
+  offset: homeActive != null ? document.querySelector("header").offsetHeight + 100 : 0,
   duration: 0,
 })
   .setTween(headerTl)
   // .addIndicators()
   .addTo(homeController);
 
+// JUMBO ANIMATION //
+let jumboNodes = document.querySelectorAll('.jumbo-section');
+if (jumboNodes != null) {
+  jumboNodes.forEach((node) => {
+    let jumboTl = gsap.timeline();
+    jumboTl
+      .fromTo(
+        node.querySelectorAll(".transparent-color"),
+        {
+          opacity: 1,
+          backgroundColor: "rgb(66, 53, 88)",
+        },
+        {
+          opacity: 0.8,
+          duration: 1.2,
+        }
+      )
+      .fromTo(
+        "header .logo",
+        {
+          x: -200,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+        },
+        ">-.5"
+      )
+      .fromTo(
+        "header .menu",
+        {
+          x: 200,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+        },
+        ">-1"
+      )
+      .fromTo(
+        node.querySelectorAll(".titles h1"),
+        {
+          x: 0,
+          opacity: 0,
+        },
+        {
+          x: 100,
+          opacity: 1,
+          duration: 1,
+        },
+        ">-.3"
+      )
+      .fromTo(
+        node.querySelectorAll(".titles h2"),
+        {
+          x: 0,
+          opacity: 0,
+        },
+        {
+          x: 135,
+          opacity: 1,
+          duration: 1,
+        },
+        ">-.5"
+      )
+      .fromTo(
+        node.querySelectorAll(".state"),
+        {
+          x: "100%",
+        },
+        {
+          x: 0,
+          duration: 1,
+        },
+        ">-1"
+      )
+      .fromTo(
+        node.querySelectorAll(".store-info"),
+        {
+          y: "100%",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+        },
+        ">-1.8"
+      )
+      .fromTo(
+        node.querySelectorAll(".store-info img"),
+        {
+          y: 400,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+        },
+        ">-1.5"
+      );
+  })
+}
+
+// TWO COLLECTION SECTION ANIMATION //
+
+let twoCollectionNodes = document.querySelectorAll('.two-collections');
+if (twoCollectionNodes != null) {
+  twoCollectionNodes.forEach((node) => {
+    let twoCollectionTl = gsap.timeline();
+    twoCollectionTl
+      .fromTo(
+        node.querySelectorAll(".col-md-6"),
+        {
+          y: 300,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+        }
+      )
+      .fromTo(
+        node.querySelectorAll(".collection-title"),
+        {
+          y: 300,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+        }
+      );
+
+    // TWO COLLECTION SCROLL ANIMATION //
+
+    let twoCScene = new ScrollMagic.Scene({
+      triggerElement: node,
+      triggerHook: 1,
+      reverse: false,
+      offset: 200,
+      duration: 0,
+    })
+      .setTween(twoCollectionTl)
+      // .addIndicators()
+      .addTo(homeController);
+  })
+}
+
 // HORIZONTAL SALE ANIMATION //
 
-const horizontalTl = gsap.timeline();
-horizontalTl
-  .fromTo(
-    "#horizontal-img",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-    }
-  )
-  .fromTo(
-    "#horizontal-img .percent-number",
-    {
-      scale: 0,
-    },
-    {
-      scale: 1,
-      duration: 1,
-    }
-  )
-  .fromTo(
-    "#horizontal-img .title",
-    {
-      scale: 0,
-    },
-    {
-      scale: 1,
-    },
-    ">-1"
-  );
+let horizontalImgNodes = document.querySelectorAll('.horizontal-img');
 
-let horizontalScene = new ScrollMagic.Scene({
-  triggerElement: "#horizontal-img",
-  triggerHook: 1,
-  reverse: true,
-  offset: 150,
-  duration: 0,
-})
-  .setTween(horizontalTl)
-  // .addIndicators()
-  .addTo(homeController);
+if (horizontalImgNodes != null) {
+  horizontalImgNodes.forEach((node) => {
+    let horizontalTl = gsap.timeline();
+    horizontalTl
+      .fromTo(
+        node,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+        }
+      )
+      .fromTo(
+        node.querySelectorAll('.percent-number'),
+        {
+          scale: 0,
+        },
+        {
+          scale: 1,
+          duration: 1,
+        }
+      )
+      .fromTo(
+        node.querySelectorAll('.title'),
+        {
+          scale: 0,
+        },
+        {
+          scale: 1,
+        },
+        ">-1"
+      );
+
+    let horizontalScene = new ScrollMagic.Scene({
+      triggerElement: node,
+      triggerHook: 1,
+      reverse: true,
+      offset: 150,
+      duration: 0,
+    })
+      .setTween(horizontalTl)
+      // .addIndicators()
+      .addTo(homeController);
+  })
+}
 
 // TOP PRODUCTS ANIMATION //
 
-const productsGroupTl = gsap.timeline();
-productsGroupTl.fromTo(
-  "#products-group .product-item",
-  {
-    opacity: 0,
-    y: 100,
-  },
-  {
-    opacity: 1,
-    y: 0,
-    stagger: 0.25,
-    duration: 0.3,
-  }
-);
+let productsGroupNodes = document.querySelectorAll('.products-group');
 
-let productsGroupScene = new ScrollMagic.Scene({
-  triggerElement: "#products-group",
-  triggerHook: 1,
-  reverse: false,
-  offset: 200,
-  duration: 0,
-})
-  .setTween(productsGroupTl)
-  // .addIndicators()
-  .addTo(homeController);
+if (productsGroupNodes != null) {
+  productsGroupNodes.forEach((node) => {
+    let productsGroupTl = gsap.timeline();
+    productsGroupTl.fromTo(
+      node.querySelectorAll('.product-item'),
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.25,
+        duration: 0.3,
+      }
+    );
+
+    let productsGroupScene = new ScrollMagic.Scene({
+      triggerElement: node,
+      triggerHook: 1,
+      reverse: false,
+      offset: 200,
+      duration: 0,
+    })
+      .setTween(productsGroupTl)
+      // .addIndicators()
+      .addTo(homeController);
+
+  })
+}
 
 // FOOTER ANIMATION //
 

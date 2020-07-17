@@ -1,0 +1,62 @@
+{%- assign collection = collections[section.settings.collection] -%}
+<section class="products-group">
+  <h2>{{collection.title}}</h2>
+  <div class="container">
+    <div class="row">
+    {% for product in collection.products limit: section.settings.max_products %}
+      <div class="col-md-6 col-lg-3">
+        <a class="product-item" href="{{product.url}}">
+          <img
+            class="product-img"
+            src="{{product.featured_image | img_url: '350x'}}"
+          />
+          <div class="overlay" style="background: {{section.settings.product_hover_color | color_modify: 'alpha', 0.7}};"></div>
+          <div class="product-info" style="color: {{section.settings.product_info_color}};">
+            <div class="product-title">{{product.title}}</div>
+            <div class="product-price">{{product.price | money_with_currency}}</div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Products Group",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection On Sale",
+      "info": "Choose a collection"
+    },
+    {
+      "type": "text",
+      "id": "max_products",
+      "label": "Maximum Amount of Products",
+      "default": "8",
+      "info": "Numbers Only"
+    },
+    {
+      "type": "color",
+      "id": "product_info_color",
+      "label": "Product Info Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "product_hover_color",
+      "label": "Product Hover Color",
+      "default": "rgba(100, 100, 100, 0.7)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Group",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

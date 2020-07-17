@@ -109,7 +109,7 @@ header {
   }
 }
 
-#jumbo {
+.jumbo-section {
   background: black;
   height: 100vh;
   width: 100%;
@@ -206,7 +206,7 @@ header {
   }
 }
 
-#two-collections {
+.two-collections {
   margin-bottom: 25px;
   overflow: hidden;
   .left-c {
@@ -268,7 +268,7 @@ header {
   }
 }
 
-#horizontal-img {
+.horizontal-img {
   .overlay {
     background: rgba(0, 0, 0, 0.5);
     height: 100%;
@@ -311,7 +311,7 @@ header {
   }
 }
 
-#products-group {
+.products-group {
   padding: 50px 0 0 0;
   overflow: hidden;
 
@@ -459,13 +459,6 @@ footer {
       margin-bottom: 15px;
       padding-bottom: 10px;
     }
-    > li.dropdown {
-      // display: flex;
-
-      a {
-        // border-bottom: none;
-      }
-    }
     .sub-menu a {
       color: white;
       font-size: 1.2rem;
@@ -494,9 +487,14 @@ footer {
   display: block;
 }
 
+.content-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 // tablet
 @media (min-width: 768px) and (max-width: 991px) {
-  #horizontal-img .overlay .percent-number {
+  .horizontal-img .overlay .percent-number {
     font-size: 15rem;
   }
 }
@@ -504,7 +502,7 @@ footer {
 // large phones
 
 @media (min-width: 576px) and (max-width: 767px) {
-  #jumbo .titles {
+  .jumbo-section .titles {
     h1 {
       font-size: 4rem;
     }
@@ -513,7 +511,7 @@ footer {
     }
   }
 
-  #horizontal-img .overlay {
+  .horizontal-img .overlay {
     .percent-number {
       font-size: 12rem;
     }
@@ -534,7 +532,7 @@ footer {
     right: 0;
   }
 
-  #jumbo {
+  .jumbo-section {
     .state {
       .number {
         font-size: 3rem;
@@ -552,7 +550,7 @@ footer {
     }
   }
 
-  #horizontal-img .overlay {
+  .horizontal-img .overlay {
     .percent-number {
       font-size: 10rem;
     }

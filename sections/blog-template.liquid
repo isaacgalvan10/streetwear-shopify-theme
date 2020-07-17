@@ -1,7 +1,8 @@
+<div class="content-wrapper">
 {% paginate blog.articles by 12 %}
 
 <div class="page-width">
-  <header class="section-header text-center">
+  <div class="section-header text-center">
     <h1>{{ page_title }}</h1>
     {% if blog.tags.size > 0 %}
       <div class="blog-filter">
@@ -17,7 +18,7 @@
         </div>
       </div>
     {% endif %}
-  </header>
+  </div>
 </div>
 
 
@@ -202,7 +203,7 @@
 {%- endif -%}
 
 {% endpaginate %}
-
+</div>
 
 
 {% schema %}
