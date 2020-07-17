@@ -55,12 +55,12 @@
   {% endif %}
 </div>
 
-<header style="background: black;">
-  <div class="logo">
+<header style="background: black; padding: 0 10px; width: 100vw;">
+  <div class="logo" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
     {% if request.page_type == 'index' %}
         <h1 class="h2 site-header__logo">
       {% else %}
-        <div class="h2 site-header__logo" style="position: relative; top: 40px;">
+        <div class="h2 site-header__logo">
     {% endif %}
     {% if section.settings.logo %}
       {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
@@ -86,7 +86,7 @@
         <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
     {% endif %}
   </div>
-  <ul class="menu" style="position: relative; bottom: 35px; left: 100%;">
+  <ul class="menu">
 
     <!-- Start menu loop -->
 

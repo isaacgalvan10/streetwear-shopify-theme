@@ -8,13 +8,13 @@ headerTl
   .fromTo(
     "header",
     {
-      backgroundColor: "rgba( 0, 0, 0, 0)",
+      backgroundColor: `{{ settings.header_bg_color | color_modify: 'alpha', 0 }}`,
     },
     {
-      backgroundColor: "rgba( 0, 0, 0, 1)",
+      backgroundColor: `{{ settings.header_bg_color | color_modify: 'alpha', 1 }}`,
       duration: 0.5,
     }
-  )
+)
   .fromTo(
     "header .logo",
     {
@@ -359,3 +359,4 @@ mobileMenuOn();
 window.addEventListener("resize", function (event) {
   mobileMenuOn();
 });
+

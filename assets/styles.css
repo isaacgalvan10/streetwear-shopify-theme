@@ -124,6 +124,11 @@ header .mobile-menu .open-mobile-menu {
   cursor: pointer;
 }
 
+.template-index header .menu {
+  left: 0;
+  bottom: 0;
+}
+
 .jumbo-section {
   background: black;
   height: 100vh;

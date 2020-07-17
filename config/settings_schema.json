@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Debut",
-    "theme_author": "Shopify",
-    "theme_version": "16.7.0",
-    "theme_documentation_url": "https://help.shopify.com/manual/using-themes/themes-by-shopify/debut",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_name": "Streetwear Theme",
+    "theme_author": "Isaac Galvan",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://github.com/isaacgalvan10",
+    "theme_support_url": "https://github.com/isaacgalvan10"
   },
   {
     "name": {
@@ -29,6 +29,28 @@
       "zh-TW": "色彩"
     },
     "settings": [
+      {
+        "type": "header",
+        "content": "Header and Mobile Menu"
+      },
+      {
+        "type": "color",
+        "id": "header_logo_color",
+        "label": "Color of Logo Font",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "header_links",
+        "label": "Color of Links",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "header_bg_color",
+        "label": "Color of Header and Mobile Menu Background",
+        "default": "#000000"
+      },
       {
         "type": "header",
         "content": {

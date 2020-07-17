@@ -34,7 +34,7 @@ header {
     font-size: 2rem;
     font-weight: 600;
     text-decoration: none;
-    color: white;
+    color: {{settings.header_logo_color}};
     text-transform: uppercase;
     display: block;
   }
@@ -47,7 +47,7 @@ header {
       display: inline-block;
       font-weight: 400;
       text-decoration: none;
-      color: white;
+      color: {{settings.header_links}};
       text-transform: uppercase;
     }
 
@@ -71,7 +71,6 @@ header {
         position: absolute;
         transform: translate3d(0, 10px, 0);
         background: white;
-        color: red;
         display: none;
         min-width: 150px;
         border-radius: 5px;
@@ -98,7 +97,7 @@ header {
 
   .mobile-menu .open-mobile-menu {
     display: block;
-    color: white;
+    color: {{settings.header_links}};
     font-size: 1.5rem;
     height: 50px;
     width: 50px;
@@ -108,6 +107,14 @@ header {
     cursor: pointer;
   }
 }
+
+.template-index header {
+  .menu {
+    left: 0;
+    bottom: 0;
+  }
+}
+
 
 .jumbo-section {
   background: black;
@@ -426,7 +433,7 @@ footer {
 }
 
 #mobile-menu {
-  background: black;
+  background: {{settings.header_bg_color}};
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -443,7 +450,7 @@ footer {
     position: relative;
 
     a {
-      color: white;
+      color: {{settings.header_logo_color}};
       text-transform: uppercase;
     }
   }
@@ -452,7 +459,7 @@ footer {
       margin-bottom: 1rem;
     }
     > li > a {
-      color: $font-subheader-color;
+      color: {{settings.header_links}};
       font-size: 1.2rem;
       display: block;
       border-bottom: 1px solid white;
@@ -460,7 +467,7 @@ footer {
       padding-bottom: 10px;
     }
     .sub-menu a {
-      color: white;
+      color: {{settings.header_links}};
       font-size: 1.2rem;
       display: inline-block;
       text-decoration: none;
@@ -471,7 +478,7 @@ footer {
   .close-mobile-menu {
     height: 50px;
     width: 50px;
-    color: white;
+    color: {{settings.header_links}};
     display: flex;
     justify-content: center;
     align-items: center;
